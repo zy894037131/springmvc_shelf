@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:spring="http://www.springframework.org/schema/context"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:mybaits-spring="http://mybatis.org/schema/mybatis-spring"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd">
+        <!--spring希望管理所有业务逻辑-->
+        <spring:component-scan base-package="cn.tedu.com">
+                <spring:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"></spring:exclude-filter>
+        </spring:component-scan>
+        <context:property-placeholder location="classpath:dataSource.properties"></context:property-placeholder>
+        <!--spring 用来控制业务逻辑，数据源，事务，aop等-->
+        <!--数据库参数配置-->
+        <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+                <property name="jdbcUrl" value="${jdbc.url}"></property>
+                <property name="driverClass" value="${jdbc.driver}"></property>
+                <property name="user" value="${jdbc.username}"></property>
+                <property name="password" value="${jdbc.password}"></property>
+        </bean>
+        <!--spring 事务管理器-->
+        <bean class="org.springframework.jdbc.datasource.DataSourceTransactionManager" id="dataSourceTransactionManager">
+                <property name="dataSource" ref="dataSource"></property>
+        </bean>
+        <!--开启基于注解的事务-->
+        <tx:annotation-driven transaction-manager="dataSourceTransactionManager"></tx:annotation-driven>
+        <bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactoryBean">
+                <property name="dataSource" ref="dataSource"></property>
+                <property name="configLocation" value="classpath:mybaits-config.xml"></property>
+                <property name="mapperLocations" value="classpath:cn/tedu/com/mapper/*.xml"></property>
+        </bean>
+        <bean class="cn.tedu.com.util.ApplicationContextToolUtil" id="applicationContextToolUtil" scope="singleton"></bean>
+        <!--扫描所有mapper接口的实现，让mapper能够自动注入-->
+        <mybaits-spring:scan base-package="cn.tedu.com.dao"></mybaits-spring:scan>
+</beans>

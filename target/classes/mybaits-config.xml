@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?> <!DOCTYPE configuration  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!--
+            <setting/>:用来设置每个设置项值
+            name： 设置项名
+            value:设置项取值
+        -->
+        <!--
+            mapUnderscoreToCamelCaseEnables:驼峰法命名lastName与数据库 last_name自动对应
+        -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <setting name="lazyLoadingEnabled" value="true"></setting>
+        <setting name="aggressiveLazyLoading" value="true"></setting>
+        <setting name="cacheEnabled" value="true"/>
+    </settings>
+    <!--
+        DB_VENDOR 别名 VendorDatabaseIdProvider 解析数据库厂商别名
+    -->
+    <databaseIdProvider type="DB_VENDOR">
+        <property name="MySQL" value="mysql"></property>
+        <property name="Oracle" value="oracle"></property>
+    </databaseIdProvider>
+</configuration>

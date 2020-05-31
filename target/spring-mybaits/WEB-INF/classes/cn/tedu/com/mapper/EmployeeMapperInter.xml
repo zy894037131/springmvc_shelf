@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?> <!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+    与接口类路径对应
+-->
+<mapper namespace="cn.tedu.com.dao.EmployeeMapperInter">
+    <!--<cache flushInterval="6000" readOnly="false" size="1024" eviction="FIFO"></cache>-->
+<!--
+    <cache type="org.mybatis.caches.ehcache.EhcacheCache"></cache>
+-->
+    <!--
+        id 与接口方法名对应
+    -->
+    <select id="getEmployeeById" resultType="cn.tedu.com.bean.Employee" databaseId="mysql">
+      select id,last_name as lastName,gender,email from tbl_employee where id = #{id}
+    </select>
+
+    <select id="getEmployeeById" resultType="cn.tedu.com.bean.Employee" databaseId="orcale">
+      select id,last_name as lastName,gender,email from tbl_employee where id = #{id}
+    </select>
+    <!--获取所有员工-->
+    <select id="getAllEmps" resultType="cn.tedu.com.bean.Employee">
+      select id,last_name as lastName,gender,email from tbl_employee;
+    </select>
+    <!--新增员工-->
+    <insert id="saveEmp" parameterType="cn.tedu.com.bean.Employee"
+            keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO tbl_employee ( id, last_name, gender, email )
+        VALUES
+            (#{id},#{lastName},#{gender},#{email});
+     </insert>
+</mapper>
