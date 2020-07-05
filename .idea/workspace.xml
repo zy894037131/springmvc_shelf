@@ -382,7 +382,7 @@
     <property name="SearchEverywhereHistoryKey" value="executor&#9;PSI&#9;JAVA://org.apache.ibatis.executor.Executor&#10;AbstractRoutingDataSource&#9;FILE&#9;jar://E:/IdeaWork/spring-mybatis/lib/spring-jdbc-5.2.3.RELEASE.jar!/org/springframework/jdbc/datasource/lookup/AbstractRoutingDataSource.class&#10;c3p0&#9;FILE&#9;jar://F:/my_repository/mysql/mysql-connector-java/5.1.37/mysql-connector-java-5.1.37.jar!/com/mysql/jdbc/integration/c3p0" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1593949127889" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1593949319382" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/web" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
