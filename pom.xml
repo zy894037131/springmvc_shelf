@@ -26,6 +26,12 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
+    <dependency>
+      <groupId>org.aspectj</groupId>
+      <artifactId>aspectjweaver</artifactId>
+      <version>1.9.4</version>
+    </dependency>
     <!--mybatis jar-->
     <dependency>
       <groupId>org.mybatis</groupId>

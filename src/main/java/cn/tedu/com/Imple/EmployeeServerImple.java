@@ -16,7 +16,6 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.CompletableFuture;
 
 @Service
-@Transactional
 public class EmployeeServerImple implements EmployeeServer {
     @Autowired
     private EmployeeMapperInter employeeMapperInter;
