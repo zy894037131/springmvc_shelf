@@ -70,7 +70,7 @@
       <groupId>org.glassfish.web</groupId>
       <artifactId>jstl-impl</artifactId>
       <version>1.2</version>
-      <exclusions>
+    <!--  <exclusions>
         <exclusion>
           <groupId>javax.servlet</groupId>
           <artifactId>servlet-api</artifactId>
@@ -83,7 +83,7 @@
           <groupId>javax.servlet.jsp.jstl</groupId>
           <artifactId>jstl-api</artifactId>
         </exclusion>
-      </exclusions>
+      </exclusions>-->
     </dependency>
     <!--mybatis 逆向工程jar 根据表生成实体类和mapper-->
   </dependencies>
