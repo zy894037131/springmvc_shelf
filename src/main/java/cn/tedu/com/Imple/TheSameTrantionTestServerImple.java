@@ -14,6 +14,5 @@ public class TheSameTrantionTestServerImple implements TheSameTrantionTestServer
     @Override
     public void SameTrantionSave(Employee employee) throws Exception {
         ToolUtilTest.save(employee);
-        int i=1/0;
     }
 }
