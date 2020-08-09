@@ -10,8 +10,8 @@
         <spring:component-scan base-package="cn.tedu.com">
                 <spring:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"></spring:exclude-filter>
         </spring:component-scan>
+        <!--数据库properties文件加载器-->
         <context:property-placeholder location="classpath:dataSource.properties"></context:property-placeholder>
-        <!--spring 用来控制业务逻辑，数据源，事务，aop等-->
         <!--数据库参数配置-->
         <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
                 <property name="jdbcUrl" value="${jdbc.url}"></property>
@@ -19,7 +19,7 @@
                 <property name="user" value="${jdbc.username}"></property>
                 <property name="password" value="${jdbc.password}"></property>
         </bean>
-
+        <!--mybaits配置sqlsession工厂-->
         <bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactoryBean">
                 <property name="dataSource" ref="dataSource"></property>
                 <property name="configLocation" value="classpath:mybaits-config.xml"></property>

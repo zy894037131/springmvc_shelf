@@ -38,7 +38,7 @@
       <artifactId>mybatis</artifactId>
       <version>3.4.1</version>
     </dependency>
-    <!--jdcb jar-->
+    <!--mysql驱动 jar-->
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>

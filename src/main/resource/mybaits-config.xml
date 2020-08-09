@@ -15,6 +15,10 @@
         <setting name="aggressiveLazyLoading" value="true"></setting>
         <setting name="cacheEnabled" value="true"/>
     </settings>
+    <!--类型转换器-->
+    <typeHandlers>
+        <typeHandler handler="cn.tedu.com.typeHandler.LoginHandle" javaType="cn.tedu.com.enmup.LoginStatus"></typeHandler>
+    </typeHandlers>
     <!--
         DB_VENDOR 别名 VendorDatabaseIdProvider 解析数据库厂商别名
     -->
@@ -22,4 +26,5 @@
         <property name="MySQL" value="mysql"></property>
         <property name="Oracle" value="oracle"></property>
     </databaseIdProvider>
+
 </configuration>
